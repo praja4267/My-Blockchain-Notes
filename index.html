@@ -1,115 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
     <div class="container-fluid">
-        <h2 class="text-danger"> Data Systems Comparision </h2>
-        <h2 class="text-danger"> Digital Signatures </h2>
-        <h2 class="text-danger"> Hash and encryption </h2>
-          <div class="container-fluid">
-            <h4 class="text-info"> Classes of Cryptographic Algorithms </h4>
-Cryptographic algorithms can be categorized into three classes. This categorization is defined on basis of the number of cryptographic keys that are required for the algorithm.
+      <h2 class="text-danger">Data Systems Comparision</h2>
+      <h2 class="text-danger">Digital Signatures</h2>
+      <h2 class="text-danger">Hash and encryption</h2>
+      <div class="container-fluid">
+        <h4 class="text-info">Classes of Cryptographic Algorithms</h4>
+        Cryptographic algorithms can be categorized into three classes. This
+        categorization is defined on basis of the number of cryptographic keys
+        that are required for the algorithm.
 
-<ol>
-<li> Hash Functions </li>
-<li> Symmetric-Key Algorithms </li>
-<li> Asymmetric-Key Algorithms </li>
-</ol>
-<h5 class="text-info"> 1 Hash Functions </h5>
-Hash functions are the building blocks for modern cryptography. A hash function is a cryptographic algorithm which is used to transform large random size data to small fixed size data. The data output of the hash algorithm is called hash value or digest. The basic operation of hash functions does not need any key and operate in a one-way manner. The one-way operation means that it is impossible to compute the input from a particular output. The basic uses of hash functions are:
-<ul>
-<li> Generation and verification of digital signatures </li>
-<li> Checksum/Message integrity checks </li>
-<li> Source integrity services via MAC </li>
-<li> Derivation of sub-keys in key-establishment protocols & algorithms </li>
-<li> Generation of pseudorandom numbers </li>
-</ul>
-<br/>
-Encryption is a two step process used to first encrypt and then decrypt a message, hashing condenses a message into an irreversible <span style="color:blue;font-weight:bold"> fixed-length value</span>, or hash. Two of the most common hashing algorithms seen in networking are MD5 and SHA-1.
-<span style="color:blue;font-weight:bold"> Hashing is used only to verify data; the original message cannot be retrieved from a hash. </span> used to authenticate secure communications, a hash is typically the result of the original message plus a secret key. Hashing algorithms are also commonly used without a secret key simply for error checking. You can use the md5sum and sha1sum utilities on a Linux or Unix machine to experiment with hashing.
-<h5 class="text-info"> 2 Symmetric-key algorithms </h5>
-Symmetric-key algorithms also referred as secret-key algorithms use a single cryptographic key for encryption and decryption purposes. They convert data in a way that is problematic for an opponent to decrypt the data without the key. Symmetric keys are securely generated and distributed to the sender and receiver and are unknown to any other entity. But if a symmetric-key algorithm is being used by more than one receiver then the key has to be shared with all entities. If the key is compromised from one entity, communication of all the entities will be compromised. Symmetric Algorithms are further divided into Block & Stream algorithms. A block algorithm breaks the input into fixed-size blocks and then progresses the crypto operations. Stream algorithms perform “bit-by-bit” crypto operations.  Primary purposes of symmetric key algorithms are:
-<ul>
-<li> Confidentiality is achieved as encryption and decryption is performed using single key.</li>
-<li> Integrity and source authentication is achieved by using Message Authentication Codes because the MAC is generated and validated by the same key.</li>
-<li> Generation of pseudorandom random numbers </li>
-</ul>
-<h5 class="text-info">  3 Asymmetric-key algorithms </h5>
-Asymmetric-key algorithms are commonly referred to as “public-key algorithms”. They use two mathematically associated keys knows as public and private keys. One key is used for data encryption, and the other is used for decryption of data. The combination of a public and private key is called a key pair. The private key is always kept secret by the owner. The public key is distributed to the public and everyone can access it. The private key cannot be deduced from the public key. The public key is mostly bound to an identity by a Certificate Authority. Asymmetric-key algorithms are mostly based on mathematical problems like integer factorization and discrete logarithm problem. Main uses of asymmetric algorithms are:
-<ul>
-<li> Creation of digital signatures </li>
-<li> To establish/distribute session keys such as in case of TLS protocol </li>
-</ul>
-          </div>
-        <h2 class="text-danger"> Merkle Tree </h2>
-        <div >
-Each block in the bitcoin blockchain contains a summary of all the transactions in the block, using a merkle tree.
+        <ol>
+          <li>Hash Functions</li>
+          <li>Symmetric-Key Algorithms</li>
+          <li>Asymmetric-Key Algorithms</li>
+        </ol>
+        <h5 class="text-info">1 Hash Functions</h5>
+        Hash functions are the building blocks for modern cryptography. A hash
+        function is a cryptographic algorithm which is used to transform large
+        random size data to small fixed size data. The data output of the hash
+        algorithm is called hash value or digest. The basic operation of hash
+        functions does not need any key and operate in a one-way manner. The
+        one-way operation means that it is impossible to compute the input from
+        a particular output. The basic uses of hash functions are:
+        <ul>
+          <li>Generation and verification of digital signatures</li>
+          <li>Checksum/Message integrity checks</li>
+          <li>Source integrity services via MAC</li>
+          <li>
+            Derivation of sub-keys in key-establishment protocols & algorithms
+          </li>
+          <li>Generation of pseudorandom numbers</li>
+        </ul>
+        <br />
+        Encryption is a two step process used to first encrypt and then decrypt
+        a message, hashing condenses a message into an irreversible
+        <span style="color: blue; font-weight: bold"> fixed-length value</span>,
+        or hash. Two of the most common hashing algorithms seen in networking
+        are MD5 and SHA-1.
+        <span style="color: blue; font-weight: bold">
+          Hashing is used only to verify data; the original message cannot be
+          retrieved from a hash.
+        </span>
+        used to authenticate secure communications, a hash is typically the
+        result of the original message plus a secret key. Hashing algorithms are
+        also commonly used without a secret key simply for error checking. You
+        can use the md5sum and sha1sum utilities on a Linux or Unix machine to
+        experiment with hashing.
+        <h5 class="text-info">2 Symmetric-key algorithms</h5>
+        Symmetric-key algorithms also referred as secret-key algorithms use a
+        single cryptographic key for encryption and decryption purposes. They
+        convert data in a way that is problematic for an opponent to decrypt the
+        data without the key. Symmetric keys are securely generated and
+        distributed to the sender and receiver and are unknown to any other
+        entity. But if a symmetric-key algorithm is being used by more than one
+        receiver then the key has to be shared with all entities. If the key is
+        compromised from one entity, communication of all the entities will be
+        compromised. Symmetric Algorithms are further divided into Block &
+        Stream algorithms. A block algorithm breaks the input into fixed-size
+        blocks and then progresses the crypto operations. Stream algorithms
+        perform “bit-by-bit” crypto operations. Primary purposes of symmetric
+        key algorithms are:
+        <ul>
+          <li>
+            Confidentiality is achieved as encryption and decryption is
+            performed using single key.
+          </li>
+          <li>
+            Integrity and source authentication is achieved by using Message
+            Authentication Codes because the MAC is generated and validated by
+            the same key.
+          </li>
+          <li>Generation of pseudorandom random numbers</li>
+        </ul>
+        <h5 class="text-info">3 Asymmetric-key algorithms</h5>
+        Asymmetric-key algorithms are commonly referred to as “public-key
+        algorithms”. They use two mathematically associated keys knows as public
+        and private keys. One key is used for data encryption, and the other is
+        used for decryption of data. The combination of a public and private key
+        is called a key pair. The private key is always kept secret by the
+        owner. The public key is distributed to the public and everyone can
+        access it. The private key cannot be deduced from the public key. The
+        public key is mostly bound to an identity by a Certificate Authority.
+        Asymmetric-key algorithms are mostly based on mathematical problems like
+        integer factorization and discrete logarithm problem. Main uses of
+        asymmetric algorithms are:
+        <ul>
+          <li>Creation of digital signatures</li>
+          <li>
+            To establish/distribute session keys such as in case of TLS protocol
+          </li>
+        </ul>
+      </div>
+      <h2 class="text-danger">Merkle Tree</h2>
+      <div>
+        Each block in the bitcoin blockchain contains a summary of all the
+        transactions in the block, using a merkle tree. A merkle tree, also
+        known as a binary hash tree, is a data structure used for efficiently
+        summarizing and verifying the integrity of large sets of data. Merkle
+        trees are binary trees containing cryptographic hashes. The term “tree”
+        is used in computer science to describe a branching data structure, but
+        these trees are usually displayed upside down with the “root” at the top
+        and the “leaves” at the bottom of a diagram, as you will see in the
+        examples that follow. Merkle trees are used in bitcoin to summarize all
+        the transactions in a block, producing an overall digital fingerprint of
+        the entire set of transactions, providing a very efficient process to
+        verify whether a transaction is included in a block.
+        <span style="color: blue; font-weight: bold">
+          A Merkle tree is constructed by recursively hashing pairs of nodes
+          until there is only one hash, called the root, or merkle root. The
+          cryptographic hash algorithm used in bitcoin’s merkle trees is SHA256
+          applied twice, also known as double-SHA256.</span
+        >
 
-A merkle tree, also known as a binary hash tree, is a data structure used for efficiently summarizing and verifying the integrity of large sets of data. Merkle trees are binary trees containing cryptographic hashes. The term “tree” is used in computer science to describe a branching data structure, but these trees are usually displayed upside down with the “root” at the top and the “leaves” at the bottom of a diagram, as you will see in the examples that follow.
-
-Merkle trees are used in bitcoin to summarize all the transactions in a block, producing an overall digital fingerprint of the entire set of transactions, providing a very efficient process to verify whether a transaction is included in a block. <span style="color:blue;font-weight:bold"> A Merkle tree is constructed by recursively hashing pairs of nodes until there is only one hash, called the root, or merkle root. The cryptographic hash algorithm used in bitcoin’s merkle trees is SHA256 applied twice, also known as double-SHA256.</span>
-
-When N data elements are hashed and summarized in a merkle tree, you can check to see if any one data element is included in the tree with at most 2*log2(N) calculations, making this a very efficient data structure.
-Because the merkle tree is a binary tree, it needs an even number of leaf nodes. If there is an odd number of transactions to summarize, the last transaction hash will be duplicated to create an even number of leaf nodes, also known as a balanced tree.
-<br/>
-The same method for constructing a tree from four transactions can be generalized to construct trees of any size. In bitcoin it is common to have several hundred to more than a thousand transactions in a single block, which are summarized in exactly the same way, producing just 32 bytes of data as the single merkle root. In Figure 7-4, you will see a tree built from 16 transactions. Note that although the root looks bigger than the leaf nodes in the diagram, it is the exact same size, just 32 bytes. Whether there is one transaction or a hundred thousand transactions in the block, the merkle root always summarizes them into 32 bytes.
-       <img src="https://ios-blockchain-dev.w3spaces.com/index/resources/merkleRoot.png?bypass-cache=1635527261">
-
-        </div>
-        <h2 class="text-danger"> Merkle Patricia Tree </h2>
-        <h2 class="text-danger"> Hash Cash </h2>
-        <h2 class="text-danger"> Record Keeping </h2>
-        <h2 class="text-danger"> Layers Of a Blockchain</h2>
-        <h2 class="text-danger"> Types of Consensus Algorithms </h2>
-        <h2 class="text-danger"> Byzantine Generals problem </h2>
-        <br/>
-        <h2 class="text-danger"> Bitcoin Blockchain Network </h2>
-        <h2 class="text-danger"> Bitcoin Record keeping</h2>
-        <h2 class="text-danger"> Genesis block </h2>
-        <h2 class="text-danger"> Types of nodes </h2>
-        <h2 class="text-danger"> Bitcoin Block Anatomy </h2>
-        <h2 class="text-danger"> Consensus Mechanish - Proof of work </h2>
-        <h2 class="text-danger"> SPV nodes </h2>
-        <h2 class="text-danger"> Byzantine Fault tolerance </h2>
-        <h2 class="text-danger"> Types of Blockchains </h2>
-        <h2 class="text-danger"> Smart Contract Evolution </h2>
-        <h2 class="text-danger"> Blockchain Architecture</h2>
-        <br/>
-        <h2 class="text-danger"> Ethereum Architecture </h2>
-        <h2 class="text-danger"> Ether </h2>
-        <h2 class="text-danger"> Gas </h2>
-        <h2 class="text-danger"> Ethereum Block Anatomy </h2>
-        <h2 class="text-danger"> Consensus in Ethereum </h2>
-        <h2 class="text-danger"> Forking and Ommer blocks</h2>
-        <h2 class="text-danger"> Soft fork and Hard fork </h2>
-        <h2 class="text-danger"> State transition in Ethereum - Checks </h2>
-        <h2 class="text-danger"> State Transition in Ethereum - Process </h2>
-        <h2 class="text-danger"> Alt Coins vs tokens </h2>
-        <h2 class="text-danger"> Ethash </h2>
-        <h2 class="text-danger"> Geth, Geth CLI </h2>
-        <h2 class="text-danger"> Steps to setup private Ethereum Blockchain </h2>
-        <h2 class="text-danger"> Truffle</h2>
-        <h2 class="text-danger"> Wallets in ethereum </h2>
-        <h2 class="text-danger"> Metamask Setup </h2>
-        <h2 class="text-danger"> Token vs Crypto currency </h2>
-        <h2 class="text-danger"> ERC 20 Token </h2>
-        <h2 class="text-danger"> ERC 777 Token </h2>
-        <h2 class="text-danger"> ERC 721 Token </h2>
-        <h2 class="text-danger"> Smart Contract deploymetn using Ganache </h2>
-        <h2 class="text-danger"> DApp Archotecture </h2>
-        <h2 class="text-danger"> Web3 provider </h2>
-        <br/>
-        <h2 class="text-danger"> Hyperledger Architecture </h2>
-        <h2 class="text-danger"> Fabric network setup - Cryptomaterials and Channel Artifacts </h2>
-        <h2 class="text-danger"> Fabric node SDK </h2>
-        <h2 class="text-danger"> Chaincode </h2>
-        <h2 class="text-danger"> Chaincode deployment </h2>
+        When N data elements are hashed and summarized in a merkle tree, you can
+        check to see if any one data element is included in the tree with at
+        most 2*log2(N) calculations, making this a very efficient data
+        structure. Because the merkle tree is a binary tree, it needs an even
+        number of leaf nodes. If there is an odd number of transactions to
+        summarize, the last transaction hash will be duplicated to create an
+        even number of leaf nodes, also known as a balanced tree.
+        <br />
+        The same method for constructing a tree from four transactions can be
+        generalized to construct trees of any size. In bitcoin it is common to
+        have several hundred to more than a thousand transactions in a single
+        block, which are summarized in exactly the same way, producing just 32
+        bytes of data as the single merkle root. In Figure 7-4, you will see a
+        tree built from 16 transactions. Note that although the root looks
+        bigger than the leaf nodes in the diagram, it is the exact same size,
+        just 32 bytes. Whether there is one transaction or a hundred thousand
+        transactions in the block, the merkle root always summarizes them into
+        32 bytes.
+        <img
+          src="/img/merkleRoot.png"
+          alt="Merkle tree with more number of transactions"
+        />
+      </div>
+      <h2 class="text-danger">Merkle Patricia Tree</h2>
+      <h2 class="text-danger">Hash Cash</h2>
+      <h2 class="text-danger">Record Keeping</h2>
+      <h2 class="text-danger">Layers Of a Blockchain</h2>
+      <h2 class="text-danger">Types of Consensus Algorithms</h2>
+      <h2 class="text-danger">Byzantine Generals problem</h2>
+      <br />
+      <h2 class="text-danger">Bitcoin Blockchain Network</h2>
+      <h2 class="text-danger">Bitcoin Record keeping</h2>
+      <h2 class="text-danger">Genesis block</h2>
+      <h2 class="text-danger">Types of nodes</h2>
+      <h2 class="text-danger">Bitcoin Block Anatomy</h2>
+      <h2 class="text-danger">Consensus Mechanish - Proof of work</h2>
+      <h2 class="text-danger">SPV nodes</h2>
+      <h2 class="text-danger">Byzantine Fault tolerance</h2>
+      <h2 class="text-danger">Types of Blockchains</h2>
+      <h2 class="text-danger">Smart Contract Evolution</h2>
+      <h2 class="text-danger">Blockchain Architecture</h2>
+      <br />
+      <h2 class="text-danger">Ethereum Architecture</h2>
+      <h2 class="text-danger">Ether</h2>
+      <h2 class="text-danger">Gas</h2>
+      <h2 class="text-danger">Ethereum Block Anatomy</h2>
+      <h2 class="text-danger">Consensus in Ethereum</h2>
+      <h2 class="text-danger">Forking and Ommer blocks</h2>
+      <h2 class="text-danger">Soft fork and Hard fork</h2>
+      <h2 class="text-danger">State transition in Ethereum - Checks</h2>
+      <h2 class="text-danger">State Transition in Ethereum - Process</h2>
+      <h2 class="text-danger">Alt Coins vs tokens</h2>
+      <h2 class="text-danger">Ethash</h2>
+      <h2 class="text-danger">Geth, Geth CLI</h2>
+      <h2 class="text-danger">Steps to setup private Ethereum Blockchain</h2>
+      <h2 class="text-danger">Truffle</h2>
+      <h2 class="text-danger">Wallets in ethereum</h2>
+      <h2 class="text-danger">Metamask Setup</h2>
+      <h2 class="text-danger">Token vs Crypto currency</h2>
+      <h2 class="text-danger">ERC 20 Token</h2>
+      <h2 class="text-danger">ERC 777 Token</h2>
+      <h2 class="text-danger">ERC 721 Token</h2>
+      <h2 class="text-danger">Smart Contract deploymetn using Ganache</h2>
+      <h2 class="text-danger">DApp Archotecture</h2>
+      <h2 class="text-danger">Web3 provider</h2>
+      <br />
+      <h2 class="text-danger">Hyperledger Architecture</h2>
+      <h2 class="text-danger">
+        Fabric network setup - Cryptomaterials and Channel Artifacts
+      </h2>
+      <h2 class="text-danger">Fabric node SDK</h2>
+      <h2 class="text-danger">Chaincode</h2>
+      <h2 class="text-danger">Chaincode deployment</h2>
     </div>
-</body>
+  </body>
+</html>
