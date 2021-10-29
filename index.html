@@ -147,6 +147,30 @@
           src="/img/merkleRoot.png"
           alt="Merkle tree with more number of transactions"
         />
+        <br />
+        To prove that a specific transaction is included in a block, a node only
+        needs to produce log2(N) 32-byte hashes, constituting an authentication
+        path or merkle path connecting the specific transaction to the root of
+        the tree. This is especially important as the number of transactions
+        increases, because the base-2 logarithm of the number of transactions
+        increases much more slowly. This allows bitcoin nodes to efficiently
+        produce paths of 10 or 12 hashes (320–384 bytes), which can provide
+        proof of a single transaction out of more than a thousand transactions
+        in a megabyte-size block.
+        <br />
+        In the following figure, a node can prove that a transaction K is
+        included in the block by producing a merkle path that is only four
+        32-byte hashes long (128 bytes total). The path consists of the four
+        hashes (noted in blue in Figure 7-5) HL, HIJ, HMNOP and HABCDEFGH. With
+        those four hashes provided as an authentication path, any node can prove
+        that HK (noted in green in the diagram) is included in the merkle root
+        by computing four additional pair-wise hashes HKL, HIJKL, HIJKLMNOP, and
+        the merkle tree root (outlined in a dotted line in the diagram).
+        <img
+          src="/img/merkleTree-verify.png"
+          alt="Merkle tree leaves to root
+        creation process"
+        />
       </div>
       <h2 class="text-danger">Merkle Patricia Tree</h2>
       <h2 class="text-danger">Hash Cash</h2>
