@@ -1,20 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h2 class="text-danger"> What is a Blockchain? </h2>
     <div class="container-fluid">
-      <h2 class="text-danger">Data Systems Comparision</h2>
+      Blockchain is a growing list of records, called blocks, that are linked using cryptography.
+      Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data (generally
+      represented as a Merkle tree).
+      <p>
+        Let’s understand this further with a hypothetical example of a clothing store located in a small town.
+        Since it’s the only store in the town, customers come in large numbers on a daily basis. Earlier, there were a
+        few instances of mismatch in sales,
+        inventory and revenue because the cashiers were inefficient in creating proper receipts, handling payments,
+        and maintaining records. The store owner identified that having a centralised data store, that stores all the
+        store information is causing the aforementioned issues.
+        To address these issues, the store owner has implemented a unique mechanism. He set up four cash counters
+        located near to each other.
+        Every time a purchase/refund is concluded at any of the counters, the cashier at that counter rings a bell and
+        announces the following details:
+      </p>
+      <ul>
+        <li> transaction number of the day </li>
+
+        <li> value of the sale/refund and </li>
+
+        <li> the time of occurrence </li>
+      </ul>
+      <p>
+        This specific procedure is followed for every transaction recorded, also a representation of the validity rules.
+        The cashier notes the details of all transactions in the daily ledger. Once the announcement is over, all other
+        cashiers record this transaction in their respective ledgers. Basically, every cashier records all the
+        transactions done by every other cashier. This way all of them have the record of all the transactions done in
+        that particular day. The ringing of the bell signals the intent of the cashier to announce a transaction. All
+        bells have unique sounds. When there is a conflict in determining the order of transaction, the bell that was
+        rung first is given preference. Once the transaction is noted, the other cashiers ring the bell once to confirm
+        the activity. There is an assistant to support every cashier, and the assistant’s role is to monitor the
+        transactions noted by the cashiers. The store owner might reach out to any of the assistants to confirm the
+        presence or validity of any transaction. Hence, the store owner can track the transactions that take place in
+        real time. This process is followed every day of the week.
+
+        The above scenario is synonymous with the concept of a blockchain. All transactions here are verified across a
+        peer-to-peer network of cashiers. Absolute authority is not vested in any one cashier. Instead, it represents a
+        decentralised system where all cashiers store the same copy of all the transactions that take place during the
+        day. Also, the addition of any transaction to the registry is carried out via a consensus mechanism between the
+        cashiers. The transaction log represents the registry of transactions or the distributed ledger. If any
+        transaction is missed out by any of the cashiers, by announcing the transaction number every time the bell is
+        rung, the other cashiers can rectify the order and ensure the ledger is consistent with other ledgers across the
+        store.
+
+        Hence, another way of describing a blockchain is a decentralised database of transaction records which is
+        distributed over all the participating nodes in the network.
+      </p>
+      <h5 style="font-style: italic;">
+        Blockchain, as you learnt, is a combination of decentralised and distributed database containing a registry of
+        transactions that are distributed among peers or fellow participants in the network.
+        The registry includes a long list of transactions and is continually updated with new transactions as they take
+        place. Starting from the very first transaction, a bunch of transactions is grouped into a block as per a
+        predefined block size (1MB in case of Bitcoin).
+        Once the block size is achieved by one block, the next set of transactions forms another block which is then
+        linked to the block previously formed.
+        Over time, a series of blocks is formed where each block is connected to another block that was created just
+        before it. Thus, we call this chain of blocks as the blockchain.
+      </h5>
+    </div>
+
+    <h2 class="text-danger">Different types of databases / Data Systems Comparision </h2>
+    <img src="./img/centralizedVsDecentralisedVsDistributed.png"
+      alt="centralizedVsDecentralisedVsDistributed Comparision">
+    <div class="container-fluid">
+      A database is nothing but a structured set of information which can be accessed, updated and modified in an
+      efficient and simple way.
+      We classify databases into three types — centralised, decentralised and distributed.
+
+      <h4>A. CENTRALIZED SYSTEMS: </h4>
+      <div class="container-fluid">
+        Centralized systems are systems that use client/server architecture where one or more client nodes are directly
+        connected to a central server.
+        This is the most commonly used type of system in many organizations where a client sends a request to a company
+        server and receives the response.
+
+        <h5>Example: </h5>
+        Wikipedia. Consider a massive server to which we send our requests and the server responds with the article that
+        we requested.
+        Suppose we enter the search term ‘junk food’ in the Wikipedia search bar. This search term is sent as a request
+        to the Wikipedia servers
+        (mostly located in Virginia, U.S.A) which then responds back with the articles based on relevance. In this
+        situation, we are the client node, Wikipedia servers are
+        the central server.
+
+        <h5>Components of Centralized System – </h5>
+        <ul>
+          <li>Node (Computer, Mobile, etc.). </li>
+          <li>Server. </li>
+          <li>Communication link (Cables, Wi-Fi, etc.). </li>
+        </ul>
+        <h5>Architecture of Centralized System – </h5>
+        <ul>
+          <li> Client-Server architecture. The central node that serves the other nodes in the system is the server node
+            and all the other nodes are the client nodes. </li>
+        </ul>
+        <h5>Use Cases – </h5>
+        <ul>
+          <li> databases – all the data in one server for use.</li>
+          <li> games like Need For Speed, GTA Vice City – an entire game in one system(commonly, a Personal Computer)
+          </li>
+          <li> development by deploying test servers leading to easy debugging, easy deployment, easy simulation </li>
+          <li> Personal Computers </li>
+        </ul>
+        <h5> Organizations Using – </h5>
+        <ul>
+          <li> National Informatics Center (India), IBM </li>
+        </ul>
+      </div>
+
+      <h4>B. DECENTRALIZED SYSTEMS:</h4>
+      <div class="container-fluid">
+        These are other types of systems that have been gaining a lot of popularity, primarily because of the massive
+        hype of Bitcoin.
+        Now many organizations are trying to find the application of such systems.
+        In decentralized systems, every node makes its own decision. The final behavior of the system is the aggregate
+        of the decisions of the individual nodes.
+        Note that there is no single entity that receives and responds to the request.
+        <h5>Example – </h5>
+        Bitcoin. Let’s take Bitcoin for example because it is the most popular use case of decentralized systems. No
+        single entity/organization owns the bitcoin network.
+        The network is a sum of all the nodes who talk to each other for maintaining the amount of bitcoin every account
+        holder has.
+
+        <h5>Components – </h5>
+        <ul>
+          <li> Node (Computer, Mobile, etc.) </li>
+          <li> link (Cables, Wi-Fi, etc.) </li>
+        </ul>
+        <h5>Architecture of Decentralized System – </h5>
+        <ul>
+          <li> architecture – all nodes are peers of each other. No one node has supremacy over other nodes </li>
+          <li> architecture – One node can become a master by voting and help in coordinating of a part of the system
+            but this does not mean the node has supremacy over the other node which it is coordinating. </li>
+        </ul>
+        <h5>Use Cases – </h5>
+        <ul>
+          <li> Blockchain </li>
+          <li> Decentralized databases – Entire databases split into parts and distributed to different nodes for
+            storage and use. For example, records with names starting from ‘A’ to ‘K’ in one node, ‘L’ to ‘N’ in the
+            second node, and ‘O’ to ‘Z’ in the third node </li>
+          Cryptocurrency
+        </ul>
+        <h5>Organizations Using – </h5>
+        <ul>
+          <li> Bitcoin, Tor network </li>
+        </ul>
+      </div>
+      <h4>C. DISTRIBUTED SYSTEMS: </h4>
+      <div class="container-fluid">
+        This is the last type of system that we are going to discuss. Let’s head right into it!
+        In decentralized systems, every node makes its own decision. The final behaviour of the system is the aggregate
+        of the decisions of the individual nodes.
+        Note that there is no single entity that receives and responds to the request.
+
+        <h5>Example – </h5>
+        Google search system. Each request is worked upon by hundreds of computers which crawl the web and return the
+        relevant results. To the user, Google appears to be one system,
+        but it actually is multiple computers working together to accomplish one single task (return the results to the
+        search query).
+        <h5>Components of Distributed System – </h5>
+        <ul>
+          <li>Node (Computer, Mobile, etc.)</li>
+          <li> link (Cables, Wi-Fi, etc.)</li>
+        </ul>
+        <h5>Architecture of Distributed System – </h5>
+        <ul>
+          <li>peer-to-peer – all nodes are peers of each other and work towards a common goal </li>
+          <li> – some nodes become server nodes for the role of coordinator, arbiter, etc. </li>
+          <li> architecture – different parts of an application are distributed in different nodes of the systems and
+            these nodes work together to function as an application for the user/client </li>
+        </ul>
+        <h5> Use Cases – </h5>
+        <ul>
+          <li> SOA-based systems </li>
+          <li> Multiplayer online games </li>
+        </ul>
+        <h5> Organizations Using – </h5>
+        <ul>
+          <li> Apple, Google, Facebook. </li>
+        </ul>
+        <div>
+        </div>
+      </div>
       <h2 class="text-danger">Digital Signatures</h2>
+      A digital signature is a mathematical technique used to validate the authenticity and integrity of a message,
+      software or digital document. It's the digital equivalent of a handwritten signature or stamped seal, but it
+      offers far more inherent security. A digital signature is intended to solve the problem of tampering and
+      impersonation in digital communications.
+
+      Digital signatures can provide evidence of origin, identity and status of electronic documents, transactions or
+      digital messages. Signers can also use them to acknowledge informed consent.
+
+      In many countries, including the United States, digital signatures are considered legally binding in the same way
+      as traditional handwritten document signatures.
+      <br>
+      <p style="color: blue; font-weight: bold"> How do digital signatures work? </p>
+      Digital signatures are based on public key cryptography, also known as asymmetric cryptography. Using a public key
+      algorithm, such as RSA (Rivest-Shamir-Adleman), two keys are generated, creating a mathematically linked pair of
+      keys, one private and one public.
+      Digital signatures work through public key cryptography's two mutually authenticating cryptographic keys. The
+      individual who creates the digital signature uses a private key to encrypt signature-related data, while the only
+      way to decrypt that data is with the signer's public key.
+      If the recipient can't open the document with the signer's public key, that's a sign there's a problem with the
+      document or the signature. This is how digital signatures are authenticated.
+      Digital signature technology requires all parties trust that the individual creating the signature has kept the
+      private key secret. If someone else has access to the private signing key, that party could create fraudulent
+      digital signatures in the name of the private key holder.
+      <br>
+      <p style="color: blue; font-weight: bold"> What are the benefits of digital signatures? </p>
+      Security is the main benefit of digital signatures. Security capabilities embedded in digital signatures ensure a
+      document is not altered and signatures are legitimate. Security features and methods used in digital signatures
+      include the following:
+      Personal identification numbers (PINs), passwords and codes. Used to authenticate and verify a signer's identity
+      and approve their signature. Email, username and password are the most common methods used.
+      Asymmetric cryptography. Employs a public key algorithm that includes private and public key encryption and
+      authentication.
+      Checksum. A long string of letters and numbers that represents the sum of the correct digits in a piece of digital
+      data, against which comparisons can be made to detect errors or changes. A checksum acts as a data fingerprint.
+      Cyclic redundancy check (CRC). An error-detecting code and verification feature used in digital networks and
+      storage devices to detect changes to raw data.
+      Certificate authority (CA) validation. CAs issue digital signatures and act as trusted third parties by accepting,
+      authenticating, issuing and maintaining digital certificates. The use of CAs helps avoid the creation of fake
+      digital certificates.
+      Trust service provider (TSP) validation. A TSP is a person or legal entity that performs validation of a digital
+      signature on a company's behalf and offers signature validation reports.
+      Other benefits to using digital signatures include the following:
+      <br>
+      Timestamping. By providing the data and time of a digital signature, timestamping is useful when timing is
+      critical, such as for stock trades, lottery ticket issuance and legal proceedings.
+      Globally accepted and legally compliant. The public key infrastructure (PKI) standard ensures vendor-generated
+      keys are made and stored securely. Because of the international standard, a growing number of countries are
+      accepting digital signatures as legally binding.
+      Time savings. Digital signatures simplify the time-consuming processes of physical document signing, storage and
+      exchange, enabling businesses to quickly access and sign documents.
+      Cost savings. Organizations can go paperless and save money previously spent on the physical resources and on the
+      time, personnel and office space used to manage and transport them.
+      Positive environmental impact. Reducing paper use also cuts down on the physical waste generated by paper and the
+      negative environmental impact of transporting paper documents.
+      Traceability. Digital signatures create an audit trail that makes internal record-keeping easier for business.
+      With everything recorded and stored digitally, there are fewer opportunities for a manual signee or record-keeper
+      to make a mistake or misplace something.
+      <br>
+      <p style="color: blue; font-weight: bold"> How do you create a digital signature?</p>
+
+      To create a digital signature, signing software, such as an email program, is used to provide a one-way hash of
+      the electronic data to be signed.
+      A hash is a fixed-length string of letters and numbers generated by an algorithm. The digital signature creator's
+      private key is then used to encrypt the hash. The encrypted hash -- along with other information, such as the
+      hashing algorithm -- is the digital signature.
+      The reason for encrypting the hash instead of the entire message or document is a hash function can convert an
+      arbitrary input into a fixed-length value, which is usually much shorter. This saves time as hashing is much
+      faster than signing.
+      The value of a hash is unique to the hashed data. Any change in the data, even a change in a single character,
+      will result in a different value. This attribute enables others to use the signer's public key to decrypt the hash
+      to validate the integrity of the data.
+      If the decrypted hash matches a second computed hash of the same data, it proves that the data hasn't changed
+      since it was signed. If the two hashes don't match, the data has either been tampered with in some way and is
+      compromised or the signature was created with a private key that doesn't correspond to the public key presented by
+      the signer -- an issue with authentication.
+      <br>
+      <p style="color: blue; font-weight: bold"> Digital Certificate </p>
+
+      Digital certificate is issued by a trusted third party which proves sender’s identity to the receiver and
+      receiver’s identity to the sender.
+      A digital certificate is a certificate issued by a Certificate Authority (CA) to verify the identity of the
+      certificate holder. The CA issues an encrypted digital certificate containing the applicant’s public key and a
+      variety of other identification information. Digital certificate is used to attach public key with a particular
+      individual or an entity.
+      Digital certificate contains:-
+
+      <br>
+      <ul>
+        <li> Name of certificate holder. </li>
+        <li> Serial number which is used to uniquely identify a certificate, the individual or the entity identified by
+          the certificate </li>
+        <li> Expiration dates.</li>
+        <li> Copy of certificate holder’s public key.(used for decrypting messages and digital signatures)</li>
+        <li> Digital Signature of the certificate issuing authority.</li>
+      </ul>
+      Digital certificate is also sent with the digital signature and the message.
+      <p style="color: blue; font-weight: bold">
+        Digital certificate vs digital signature :
+      </p>
+
+      Digital signature is used to verify authenticity, integrity, non-repudiation ,i.e. it is assuring that the message
+      is sent by the known user and not modified, while digital certificate is used to verify the identity of the user,
+      maybe sender or receiver. Thus, digital signature and certificate are different kind of things but both are used
+      for security. Most websites use digital certificate to enhance trust of their users
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Feature</th>
+            <th scope="col">Digital Signature </th>
+            <th scope="col">Digital Certificate </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Basics/Definition</td>
+            <td> Definition Digital signature is like a fingerprint or an attachment to a digital document that ensures
+              its authenticity and integrity. </td>
+            <td>Digital certificate is a file that ensures holder’s identity and provides security.</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Process/Steps </td>
+            <td>Hashed value of original message is encrypted with sender’s secret key to generate the digital
+              signature. </td>
+            <td>It is generated by CA (Certifying Authority) that involves four steps: Key Generation, Registration,
+              Verification, Creation.</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Security Services</td>
+            <td>Authenticity of Sender, integrity of the document and non-repudiation.</td>
+            <td>It provides security and authenticity of certificate holder.</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Standard</td>
+            <td>It follows Digital Signature Standard (DSS).</td>
+            <td>It follows X.509 Standard Format</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <br />
+
       <h2 class="text-danger">Hash and encryption</h2>
       <div class="container-fluid">
         <h4 class="text-info">Classes of Cryptographic Algorithms</h4>
@@ -122,8 +453,7 @@
           A Merkle tree is constructed by recursively hashing pairs of nodes
           until there is only one hash, called the root, or merkle root. The
           cryptographic hash algorithm used in bitcoin’s merkle trees is SHA256
-          applied twice, also known as double-SHA256.</span
-        >
+          applied twice, also known as double-SHA256.</span>
 
         When N data elements are hashed and summarized in a merkle tree, you can
         check to see if any one data element is included in the tree with at
@@ -143,10 +473,7 @@
         just 32 bytes. Whether there is one transaction or a hundred thousand
         transactions in the block, the merkle root always summarizes them into
         32 bytes.
-        <img
-          src="./img/merkleRoot.png"
-          alt="Merkle tree with more number of transactions"
-        />
+        <img src="./img/merkleRoot.png" alt="Merkle tree with more number of transactions" />
         <br />
         To prove that a specific transaction is included in a block, a node only
         needs to produce log2(N) 32-byte hashes, constituting an authentication
@@ -166,14 +493,100 @@
         that HK (noted in green in the diagram) is included in the merkle root
         by computing four additional pair-wise hashes HKL, HIJKL, HIJKLMNOP, and
         the merkle tree root (outlined in a dotted line in the diagram).
-        <img
-          src="./img/merkleTree-verify.png"
-          alt="Merkle tree leaves to root
-        creation process"
-        />
+        <img src="./img/merkleTree-verify.png" alt="Merkle tree leaves to root
+        creation process" />
       </div>
-      <h2 class="text-danger">Merkle Patricia Tree</h2>
+      <h2 class="text-danger"> Merkle Patricia Trie — How Ethereum saves a state</h2>
+      <p>Leaving aside the network part, we could say that Ethereum is a state machine where transactions modify states
+        on the Ethereum network. A state can be expressed as a key-value pair. Although there are several ways of
+        representing a key-value pair, the Ethereum specification defines the Modified Merkle Patricia Trie (a.k.a MPT)
+        as the method to save states. </p>
+      <p>Basically, MPT is a combination of Patricia trie and Merkle tree, with few additional optimizations that fit
+        the characteristics of Ethereum. Thus, an understanding of the Patricia trie and Merkle tree should precede the
+        understanding of MPT.</p>
+
+      <p style="color: blue; font-weight: bold;"> Patricia Trie </p>
+      <p>
+        Patricia trie is a data structure which is also called Prefix tree, radix tree or trie. Trie uses a key as a
+        path so the nodes that share the same prefix can also share the same path. This structure is fastest at finding
+        common prefixes, simple to implement, and requires small memory. Thereby, it is commonly used for implementing
+        routing tables, systems that are used in low specification machines like the router.</p>
+      <img src="./img/partici-trie.png" alt="Example of Patricia Trie">
+      <p style="color: blue; font-weight: bold;"> Merkle Tree </p>
+      <p>
+        Merkle tree is a tree of hashes. Leaf nodes store data. Parent nodes contain their children’s hash as well as
+        the hashed value of the sum of their children’s hashes. Since all the nodes except for leaf nodes contain a
+        hash, the Merkle tree is also known as a hash tree.
+      </p>
+      <img src="./img/merkle-tree.png" alt="Example of Merkle Tree">
+
+      Finding out whether two different nodes have the same data or not can be efficiently done with the Merkle tree.
+      You first have to compare the Top Hash value of the two nodes. If they are the same, then the two nodes have same
+      data. For example, if you look at the picture above, when there are four nodes (L1, L2, L3, L4), you only need to
+      check whether they have the same Top Hash or not. If the Top Hash is different and you want to know which data is
+      different, you should compare Hash 0 with Hash1 and check which branch is different. By doing so, you will
+      eventually find out which data is different.
+      <p style="color: blue; font-weight: bold;"> Merkle Patricia Trie </p>
+      <img src="./img/MerkleParticiaTrie.png" alt="Merkle Particia trie">
+      <p>
+        In the MPT, as well as in the Merkle tree, every node has a hash value. Each node’s hash is decided by the sha3
+        hash value of its contents. This hash is also used as the key that refers to the node. Go-ethereum uses levelDB,
+        and parity uses rocksDB to store states. They are key-value storages. Keys and values saved in the storage are
+        not the key-values of the Ethereum state. The value that is stored in the storage is the content of MPT node
+        while the key is the hash of this node.</p>
+      <p>Key-values of the Ethereum state are used as paths on the MPT. Nibble is the unit used to distinguish key
+        values in the MPT, so each node can have up to 16 branches. Additionally, since a node has its own value, a
+        branch node is an array of 17 items composed of 1 node value and 16 branches. </p>
+      <p> A Node that does not have a child node is called a leaf node. A leaf node consists of two items: its path and
+        value. For example, let’s say the key “0xBEA” contains 1000 and the key “0xBEE” contains 2000. Then, there
+        should be a branch node with the “0xBE” path, and, under that node, two leaf nodes with two paths (“0xA” and
+        “0xE”) will be attached.</p>
+      <img src="./img/MPTBranchNode.png" alt="branch node">
+      <p>In the MPT, there is one more type of nodes apart from the branch nodes and the leaf nodes. They are extension
+        nodes. An extension node is an optimized node of the branch node. In the Ethereum state, quite frequently, there
+        are branch nodes that have only one child node. This is the reason why the MPT compresses branch nodes that
+        contain only one child into extension nodes that have a path and the hash of the child.</p>
+      <p> Since both the leaf node and the extension node are an array of two items there should be a way to distinguish
+        these two different nodes. In order to make such distinction, the MPT adds a prefix to the path. If the node is
+        a leaf and the path consists of even number of nibbles, you add 0x20 as a prefix. If the path consists of odd
+        number of nibbles, you should add 0x3 as a prefix. If the node is an extension node and the path consists of
+        even number of nibbles, you add 0x00 as a prefix. If it consists of odd number of nibbles, you should add 0x1 as
+        a prefix. Because the path that consists of an odd number of nibbles gets a nibble as prefix and the path that
+        consists of an even number of nibbles gets two nibbles as a prefix, a path is always expressed as a byte.</p>
+
       <h2 class="text-danger">Hash Cash</h2>
+      <div class="container-fluid">
+        <span style="font-weight: bold; color: blue;"> Hashcash is a proof-of-work algorithm</span>, which has been used
+        as a denial-of-service counter measure
+        technique in a number of systems.
+        <p>
+          A hashcash stamp constitutes a proof-of-work which takes a parameterizable amount of work to compute for the
+          sender. The recipient (and indeed anyone as it is publicly auditable) can verify received hashcash stamps
+          efficiently. Hashcash was invented by Adam Back in 1997
+        </p>
+        <p>
+          At this point it is most widely used as the bitcoin mining function.
+        </p>
+        <p>
+          The email anti-spam tool, like the proof-of-work algorithm, is also called hashcash and is used to create
+          stamps to attach to mail to add a micro-cost to sending mail to deter spamming.
+          <br>
+        <p>So, hash cash is basically a proof of work the sender of an email has to do before sending an email. The
+          sender has to calculate the hash of the email data and make sure that the calculated hash satisfies a
+          particular condition. This limts the scope of spam emails. Please keep this technique in mind. This is because
+          this is now being used in Blockchain Technology for something known as mining of blocks. </p>
+        </p>The main use of the hashcash
+        stamp is as a white-listing hint to help hashcash users avoid losing email due to content based and blacklist
+        based anti-spam systems.
+        </p>
+        <p>
+          Hashcash source code includes a library form, and also the algorithm is extremely simple to code from scratch
+          with the availability of a hash library. Verification can be done by a human eye (count leading 0s) even with
+          availability of common preinstalled command line tools such as sha1sum. The algorithm works with a
+          cryptographic hash, such as SHA1, SHA256 or coming SHA3 that exhibits 2nd-preimage resistance. Note that
+          2nd-preimage resistance is a stronger hash property than the collision resistance property.
+        </p>
+      </div>
       <h2 class="text-danger">Record Keeping</h2>
       <h2 class="text-danger">Layers Of a Blockchain</h2>
       <h2 class="text-danger">Types of Consensus Algorithms</h2>
@@ -223,5 +636,6 @@
       <h2 class="text-danger">Chaincode</h2>
       <h2 class="text-danger">Chaincode deployment</h2>
     </div>
-  </body>
+</body>
+
 </html>
