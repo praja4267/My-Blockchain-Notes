@@ -26,6 +26,7 @@
     <h2 class="text-danger"> <a href="#Record Keeping">Record Keeping</a></h2>
     <h2 class="text-danger"> <a href="#Layers Of a Blockchain">Layers Of a Blockchain</a></h2>
     <h2 class="text-danger"> <a href="#Types of Consensus Algorithms">Types of Consensus Algorithms</a></h2>
+    <h2 class="text-danger"> <a href="#Proof of work major challenges">Proof of work major challenges</h2>
     <h2 class="text-danger"> <a href="#Byzantine Generals problem">Byzantine Generals problem</a></h2>
     <br />
     <h2 class="text-danger"> <a href="#Bitcoin Blockchain Network">Bitcoin Blockchain Network</a></h2>
@@ -33,6 +34,7 @@
     <h2 class="text-danger"> <a href="#Genesis block">Genesis block</a></h2>
     <h2 class="text-danger"> <a href="#Types of nodes">Types of nodes</a></h2>
     <h2 class="text-danger"> <a href="#Bitcoin Block Anatomy">Bitcoin Block Anatomy</a></h2>
+    <h2 class="text-danger"><a href="#Mining in Bitcoin Blockchain">Mining in Bitcoin Blockchain</h2>
     <h2 class="text-danger"> <a href="#Consensus Mechanism - Proof of work">Consensus mechanism - Proof of work</a></h2>
     <h2 class="text-danger"> <a href="#SPV nodes">SPV nodes</a></h2>
     <h2 class="text-danger"> <a href="#Byzantine Fault tolerance">Byzantine Fault tolerance</a></h2>
@@ -65,6 +67,7 @@
     <h2 class="text-danger"> <a href="#ERC 20 Token">ERC 20 Token</a></h2>
     <h2 class="text-danger"> <a href="#ERC 777 Token">ERC 777 Token</a></h2>
     <h2 class="text-danger"> <a href="#ERC 721 Token">ERC 721 Token</a></h2>
+    <h2 class="text-danger"> <a href="#Ethereum Smart Contracts">Ethereum Smart Contracts</a></h2>
     <h2 class="text-danger"> <a href="#Smart Contract deploymetn using Ganache">Smart Contract deploymetn using
         Ganache</a></h2>
     <h2 class="text-danger"> <a href="#DApp Archotecture">DApp Archotecture</a></h2>
@@ -656,19 +659,431 @@
         </p>
       </div>
       <h2 class="text-danger" id="Record Keeping">Record Keeping</h2>
+      <div>
+        <p>
+          There are several methods in which records are maintained in networks. One of the basic methods is the
+          Account/Balance model wherein balance related to every account is maintained. Bitcoin uses a different
+          mechanism for record keeping.
+        </p>
+        <p>
+          <b>Bitcoin uses the concept of unspent transaction output (UTXO) for record keeping. </b>Every transaction in
+          a
+          bitcoin is based upon an unspent transaction output (UTXO). Whenever a transaction is performed in bitcoin, it
+          primarily consumes existing UTXOs called as inputs and creates new UTXOs called outputs. The outputs generated
+          from a transaction can be utilized further in the network by the node.
+        </p>
+        <p>
+          <b>There are two ways to get the UTXO in a bitcoin network: </b>Either from another node in the network or as
+          a
+          network reward. Let’s analyze a sample transaction in the network and see how the UTXO model works.
+        </p>
+        <p>
+          Each UTXO corresponds to a particular addreess i.e a particular public key. The corresponding private key is
+          used to unlock and spend that UTXO. This private key corresponds to the owner of the UTXO which is required to
+          unlock and spend that UTXO. Once spent, that UTXO is again locked with the public key of the new owner. Now
+          since it is locked with the public key of the new owner, it requires the private key of the new owner to be
+          unlocked and spent again.
+        </p>
+        <p>
+          Transaction fee is the fee paid to the miner over and above the reward it gets for mining the block. Try to
+          answer the questions below to aid your understanding.
+        </p>
+      </div>
       <h2 class="text-danger" id="Layers Of a Blockchain">Layers Of a Blockchain</h2>
+      <div class="container-fluid">
+        <p>
+        <ol> A blockchain network has the following layers: <br>
+
+          <li>
+            <b>Hardware Layer: </b> The hardware layer can be a cloud or a server that hosts the entire network.
+          </li>
+          <li>
+            <b>Ledger or Fabric Layer: </b>It forms the base of the blockchain network and constitutes of blocks also
+            known as a ledger that hold the transaction data.
+          </li>
+          <li>
+            <b>Smart Contract or Logic Layer: </b> It forms the business logic of the network and ensures that the
+            network
+            follows all the rules and regulations that govern the blockchain network.
+          </li>
+          <li>
+            <b>Interface layer:</b> It is the set of API's that are used to communicate with the blockchain and get
+            the
+            required result such as retrieval of data, the addition of data etc.
+          </li>
+          <li>
+            <b>User Interface or Application Layer: </b> This layer is the front end of the application and runs the
+            entire network. It interacts with the rest of the layers.
+          </li>
+        </ol>
+        All these layers together form the blockchain network and users can have a different set of capabilities or
+        applications that they use over the network.
+        </p>
+      </div>
       <h2 class="text-danger" id="Types of Consensus Algorithms">Types of Consensus Algorithms</h2>
+      <h2 class="text-danger" id="Proof of work major challenges">Proof of work major challenges</h2>
+      <div>
+        <p>
+          Proof of work faces three major challenges:
+        <ol>
+          <li> It is energy inefficient: In proof of work millions of miners try to mine one block, and only one miner
+            is
+            successful. Rest of the energy spent by the miners goes to waste.</li>
+
+          <li> It is computationally heavy: Proof of work requires a lot of computation by the miners to mine one
+            block
+            successfully.</li>
+
+          <li> 51% attack: In case more than 51% of the nodes in the network are malicious the network could become
+            unstable.</li>
+        </ol>
+        Bitcoin follows the longest chain rule which states that in case the blockchain branches out into multiple
+        branches, the longest branch is accepted by the network. The branches are known as forks.
+
+        In case there 51% of the network comes together to form a mining pool they can create the longest chain with
+        faulty transactions as they are computationally superior making the network unstable.
+        </p>
+      </div>
       <h2 class="text-danger" id="Byzantine Generals problem">Byzantine Generals problem</h2>
+      <div>
+        <p>
+          The Byzentine Generals problem occurs when a malicious node propagates wrong message or tampered transactions
+          in the network that could compromise the security of data in the blockchain network. The blockchain network
+          needs to be tolerant to such activities and needs to ensure that all the transaction data in the network is
+          tamper free. Such networks are called as Byzentine Fault Tolerant Networks and they use the Byzentine fault
+          tolerant consensus.
+        </p>
+        <p>
+          For a network to be byzantine fault tolerant the number of malicious nodes in the network should be less that
+          1/3rd of the total nodes in the network. Whenever a node receives two conflicting messages, it goes for a
+          majority vote and accepts the message which comes from majority number of nodes. To ensure that the correct
+          message is accepted by the nodes in the network the total number of malicious nodes needs to less than 33.33%
+          or 1/3rd of the network. Proof-of-work is a BFT consensus mechanism provided the 51% attack and pool mining
+          does not happen.
+          <br>
+          To overcome the challenges faced by proof of work, there are other mechanisms being devised.
+        </p>
+        <p>
+          The proof of work is a very energy intensive mechanism and requires a lot of computational power. One one node
+          comes out as a winner and rest all the energy used by other nodes is wasted in the proof of work mechanism.
+          The evolution of consensus mechanisms is going and one of the methods to overcome the challenges of proof of
+          work is to choose a leader node based on the stake in the network. It is very unlikely for a node to be
+          malicious if it has the maximum stake in the network
+        </p>
+      </div>
       <br />
       <h2 class="text-danger" id="Bitcoin Blockchain Network">Bitcoin Blockchain Network</h2>
       <h2 class="text-danger" id="Bitcoin Record keeping">Bitcoin Record keeping</h2>
       <h2 class="text-danger" id="Genesis block">Genesis block</h2>
       <h2 class="text-danger" id="Types of nodes">Types of nodes</h2>
+      <div>
+        <p>
+        <ol>
+          <b>There are three types of nodes in the bitcoin blockchain network: </b>
+
+          <li> <b>Miner nodes: </b>They create the blocks in the network </li>
+
+          <li> <b>Full nodes: </b>They store the details of all the blocks in the network</li>
+          <p>
+            Full nodes keep a complete copy of all the bitcoin blockchain with all the transactions. This copy is built
+            by the full node itself from the beginning (genesis block) by verifying and adding independently all the
+            transactions to it. So a full node independently and authoritatively verifies all the transactions by itself
+            without having any need of external resources. This node receives from the network informations about new
+            blocks and transactions but verifies independently any data received while adding them to the local copy of
+            the blockchain.
+          </p>
+          <p>
+            This means that a full node gives you a complete independence from any centralization or external resource,
+            giving you the possibility to access to the system authoritatively and without having to rely on external
+            servers.
+          </p>
+          <p>
+            Obviously this comes with a price. Infact the full node needs to have a high amount of storage space for
+            storing all the blockchain locally and enough resources to run all the needed verifications. At actual rate
+            with a 2GB ram computer you may take a week for all the blockchain to be completely synced and verified
+            locally by a new full node running the bitcoin core software. Infact only the genesis block is embedded into
+            the software, all the other blocks are added to the local blockchain step by step while starting the node
+            for the first time.
+          </p>
+          <li> <b>SPV nodes (simplified payment verification node): </b>They are nodes that store only the partial
+            details of the blocks in the network</li>
+          <p>
+            Many bitcoin clients are designed to run into smartphones, tables and machines with low resources and
+            storage. For those devices a simplified payment verification system runs to allow them to operate without
+            the full blockchain stored locally.
+          </p>
+          <p>
+            SPV nodes, infact, download the block headers only and exclude the transactions of each block. So they have
+            a chain of blocks without transactions and this makes possible to have a resulting data amount stored
+            locally over thousand times lower in size.
+          </p>
+          <p>
+            They rely on peers to provide parts of the blockchain when necessary. So how they can do to verify a
+            transaction? They use the link between the transaction which they are interested in and the block that
+            contains it, using the merkle path. To protect the spv node against the possibility of a double spending
+            attack against the spv itself, the nodes must connect randomly to other different nodes to have the maximum
+            probability to get correct informations. This is why, to be completely sure about a transaction, only a full
+            node can be used.
+          </p>
+          <p>
+            It’s very important to consider this behavior can create a privacy risk. Why? because spv nodes must ask
+            about specific transactions and this makes possible that some software agent which is monitoring the network
+            can correlate the asked transactions to the user running the wallet.
+          </p>
+          <p>
+            In order to mitigate this risk, the bloom filter can be used by spv nodes. The bloom filters can ask for
+            specific transactions matching a pattern rather then about a specific transaction. SPV nodes can therefore
+            use such filters to filter transactions they receive from peers selecting only the needed informations and
+            without having to disclose with address they are interested in.
+
+            In any case using a SPV node instead of a full node gives the user a weaker privacy and security and
+            therefore the use of such nodes must be evaluated on the base of the amount held on accounts connected.
+
+            For higher held amount of bitcoin, that user plans to keep long time, it’s very important to use a dedicated
+            full node connected with a TOR network connection in such a way to benefit of enhanced security and privacy
+            for their funds.
+          </p>
+        </ol>
+        </p>
+      </div>
       <h2 class="text-danger" id="Bitcoin Block Anatomy">Bitcoin Block Anatomy</h2>
+      <div>
+        <p>
+          <b>Blocks </b>are the fundamental components of the blockchain. The word "block" is an interesting way to
+          think about
+          the information it stores; but what a block actually is, might be a little different than what you expect. In
+          this segment, we'll discuss what blocks are, and the various elements that are included in the block.
+        </p>
+        <p>
+          <b> A blocks header is comprised of the following components:</b>
+        <ol>
+          <li> <b>Merkle root - </b>aggregation of all the hash values of the transactions into a single hash value.
+          </li>
+
+          <li> <b>Timestamp - </b>Timestamp of the block creation time.</li>
+
+          <li> <b>Nonce - </b>Random Value that is altered/updated to try different permutations to achieve the required
+            difficulty level. You will learn more about this in the upcoming section.</li>
+
+          <li> <b> Transaction counter - </b>Count of the number of transactions in a block.</li>
+
+        </ol>
+
+
+        </p>
+      </div>
+      <h2 class="text-danger" id="Mining in Bitcoin Blockchain">Mining in Bitcoin Blockchain</h2>
+      <div>
+        <p>
+          The process of mining means that a new block is created and added to the blockchain. Every miner creates a
+          block from the transaction existing in its transaction pool.
+        <ul>
+          <li>For a block to be valid and added to the network, the miner needs to solve a puzzle which is defined as
+            below in the case of bitcoin blockchain. <br>
+            <b> Hash of the block header < Value Hash of the header is the hash of all the data present in the header
+                appended together. </b>
+          </li>
+          <li>In case the above condition is not met, the miners need to recompute the hash.</li>
+          <li>To recompute the hash nonce is used whose value is changed in every iteration to arrive at a new hash.
+            This is
+            because all the other data in the block such as time stamp, Merkel root, number of transactions etc. are all
+            fixed and can not be changed.</li>
+          <li>To change the hash the only thing that can be changed is the nonce value. The difficulty to attain the
+            acceptable hash in the network is termed as the difficulty of the network. Once the condition is satisfied,
+            the block becomes a valid block.</li>
+          <li>The miner who calculated a valid hash first is allowed to claim the creation of the block</li>
+        </ul>
+
+        The scenario that you have seen so far is for a single miner in the network. However, in a real bitcoin network,
+        there are millions of miners. Let’s find out how mining happens in the real network.
+        </p>
+        <p>
+          A miner competes with other miners in the network to form a block. The miner which is able to first generate a
+          block in the network is given a block reward. The block reward started from 50 BTC and currently, the miner
+          earns a block reward of 12.5 BTC for every block. <br>
+          Once a block gets created it is propagated to the entire network and all the peers don’t add the block as such
+          to their respective blockchains. Each peer node performs some validation on the incoming block.
+        </p>
+        <p>
+          The block header also contains a previous hash pointer of the block which precedes this block. Remember that
+          blockchain is a chain of blocks that are connected by this previous hash pointer also known as the previous
+          hash. The previous hash acts as a link between the blocks. Each node in the network checks whether the last
+          block in its blockchain has the same hash as the previous hash pointer of the incoming block, it adds the
+          block otherwise not.
+        </p>
+      </div>
       <h2 class="text-danger" id="Consensus Mechanism - Proof of work"> Consensus Mechanism - Proof of work </h2>
+      <div>
+        <p>
+          The blockchain is a trustless environment where nobody has to trust each other, and there is no central
+          authority to ensure trust between the transacting parties. So how does blockchain ensure that valid
+          transaction performed in the network? Blockchain employs a set of validation checks known as consensus
+          mechanism for the validity of transactions.
+        </p>
+        <p>
+          In the blockchain, mathematical algorithms are used to verify transactions and ensure trust between
+          transacting parties. Transacting parties have to trust the output achieved using these mathematical
+          algorithms. These algorithms together are known as the consensus mechanism in the blockchain. The consensus
+          can for a transaction or for an entire block.
+
+          <b>The consensus for the transaction verification of transaction includes the checks for the following:</b>
+        <ul>
+          <li>Sender Balance</li>
+          <li> Valid Authority</li>
+          <li> Valid signatures</li>
+        </ul>
+        </p>
+        <b>The consensus for a block is for the following condition:</b>
+        <p>
+          <b>Hash(HDR) < Difficulty Level </b> <br>
+              The consensus mechanism is difficult to achieve and easy to verify. The
+              above-mentioned consensus mechanism is known as proof of work. In the proof of work consensus, miner nodes
+              have to solve a computationally difficult problem to compute the hash for the current block. The network
+              sets
+              a difficulty target for the miners. This difficulty level plays a vital role in the consensus as well as
+              the
+              mining process.
+        </p>
+        <p>
+          The difficulty value, also known as the target value, sets the difficulty level of the network. The
+          difficulty level is used to regulate the mining of blocks in the network. The bitcoin network has a block
+          creation time set to 10 mins and this value has to be maintained. The difficulty value adjusts with every
+          block creation such that the value of block creation remains constant.
+        </p>
+        The formula for calculation of difficulty level in bitcoin blockchain network is:
+        <b>Difficulty Level = (Previous Difficulty Level * 20160) / (Time taken to mine last 2016 block)</b>
+
+
+        <p>
+          In case the time taken for the last block is greater than 10, the new value of difficulty level is lower
+          than the previous one such that the blocks are created faster. In case the time taken for the last block is
+          less than 10, the new value of difficulty level is greater than the previous one such that the blocks are
+          created slower.
+        </p>
+
+
+        <b>Comprehension: </b></p>
+        <p>
+          In proof of work mechanism, the consensus is achieved using an algorithm. Let us suppose miner node have
+          computed the hash of the current block and have published it to the entire network. All other nodes in the
+          network follow a set of rules to validate a block. Once all of the nodes have checked the validity of the
+          block and found it to be valid, they give their consensus and block is added to the blockchain. The
+          functions performed while validating a node are given below:
+        </p>
+        <ol>
+          <li> Check if block with same hash has already been received.</li>
+
+          <li> Check if there is a block in the already existing blockchain whose hash is previous.hash (current
+            block).</li>
+
+          <li> Check if the hash of the current block satisfies the difficulty level.</li>
+
+          <li> Check if the timestamp of the current block is greater than the timestamp of the previous block.</li>
+
+          <li> Update the current state of the blockchain new block number = parent block number + 1.</li>
+
+          <li> Broadcast updated blockchain to the network.</li>
+        </ol>
+        </p>
+      </div>
       <h2 class="text-danger" id="SPV nodes">SPV nodes</h2>
+      <div>
+        <p>
+          The primary purpose of having SPV nodes is to validate the transactions without having computationally
+          intensive machines. The SPV nodes just store the block headers and can validate whether a transaction is
+          present in a block or not. They don’t have the entire blockchain data and use the Merkel Root to arrive at a
+          conclusion regarding a transaction.
+        </p>
+
+        <p>
+          The use of SPV nodes is done due to the fact that proof of work is computationally heavy and requires a lot of
+          resources by the nodes. This is one of the challenges that has prompted developers to think of alternative
+          solutions to proof of work.
+        </p>
+
+      </div>
       <h2 class="text-danger" id="Byzantine Fault tolerance">Byzantine Fault tolerance</h2>
       <h2 class="text-danger" id="Types of Blockchains">Types of Blockchains</h2>
+      <div>
+        <p>
+          There are 4 types of blockchains
+        <ol>
+          <li>Public Blockchain</li>
+          <li>Permissioned Blockchain</li>
+          <li>Private Blockchain</li>
+          <li>Consortium Blockchain</li>
+        </ol>
+        </p>
+        There is a major transformation taking place in the Indian banking system. All the banks are coming together to
+        form a common lending platform, India Lending Blockchain, under the leadership of RBI. In addition to the banks,
+        this platform will also consist of credit bureaus, risk departments, legal and technical panels, and other
+        stakeholders of the banking industry. Now, can this Blockchain platform be purely democratic, like the Bitcoin
+        network, or will it be heavily regulated, like the SWIFT network? Let’s find out the answer to this question by
+        exploring each type of Blockchain.
+        <p>
+          <b>Public permissionless Blockchains: </b>
+          A public permissionless blockchain is free for anyone to join or leave. A Bitcoin Blockchain is the best
+          example of a public permissionless network. This type of network provides anonymity, immutability and
+          transparency but compromises on efficiency.
+          <b>Bitcoin and Ethereum are public blockchains.</b>
+        </p>
+        <p>
+          <b>Permissioned Blockchains: </b> A public permissioned blockchain is an intermediate between a private and a
+          public network. It values efficiency and immutability more than transparency and anonymity. In such a
+          blockchain, each participating member is aware of the identities of the other members in the network. For
+          example, the Goods and Services Tax (GST) network in India would be the most suitable for a permissioned
+          Blockchain since it is operated by known entities and all the participants are verified before they join the
+          network.
+        </p>
+        <p>
+          However, none of the Blockchains mentioned above will be suitable for the India Lending Blockchain network.
+          Permissionless Blockchains do not provide the identity of the participants and lack in efficiency. On the
+          other hand, public permissioned Blockchains are exposed to the public at large, even though they restrict
+          access, thus raising concerns over the security of the network, since they do not provide anonymity of the
+          participants. So, in the case of a GST network, you would not want other taxpayers in the country to know the
+          details of your tax filings.
+        </p>
+        <p>
+          <b>Private Blockchains: </b> A private blockchain is one which is operated and managed by a single entity.
+          Blockchains of this type are generally applicable in the case of conglomerates where the parent company runs
+          the network for the underlying group of companies. In such situations, they value efficiency more than
+          anonymity, transparency and immutability. If we consider the India Lending Blockchain, then RBI could be
+          considered the entity that has supreme authority over the entire network. However, this raises the question of
+          a single entity being given too much power.
+        </p>
+        <p>
+          <b>Consortium Blockchains: </b> A consortium blockchain is largely similar to a private Blockchain, but it
+          differs when you consider who controls or manages the network. Instead of concentrating all the power on a
+          single entity, authority is distributed across two or more participants. This scenario is also suitable for
+          the India Lending Blockchain where authority can be distributed between RBI and a few of the major banks so
+          that benefits can be ensured for all the members.
+        </p>
+        Now, let us summarise the key differences between the various types of Blockchains.
+        <table>
+          <tr>
+            <th>Type</th>
+            <th> Anonymity</th>
+            <th> Transparency</th>
+            <th> Immutability</th>
+            <th>Efficiency</th>
+            <th>Confidentiality</th>
+            <th>Throughput</th>
+            <th> Finality Turnaroud Time (TAT)</th>
+          </tr>
+          <tr>
+            Public Yes Yes Yes No Low Low High
+          </tr>
+          <tr>
+            Permissioned No No Yes Yes Medium Low/Medium Medium/High
+          </tr>
+          <tr>
+            Private No No No Yes Very high High Very Low
+          </tr>
+          <tr>
+            Consortium No Partial Yes Yes High High Low
+          </tr>
+        </table>
+      </div>
       <h2 class="text-danger" id="Smart Contract Evolution">Smart Contract Evolution</h2>
       <h2 class="text-danger" id="Blockchain Architecture">Blockchain Architecture</h2>
       <br />
@@ -758,6 +1173,97 @@
       <h2 class="text-danger" id="ERC 20 Token">ERC 20 Token</h2>
       <h2 class="text-danger" id="ERC 777 Token">ERC 777 Token</h2>
       <h2 class="text-danger" id="ERC 721 Token">ERC 721 Token</h2>
+      <h2 class="text-danger" id="Ethereum Smart Contracts">Ethereum Smart Contracts</h2>
+      <div class="container-fluid">
+        <p>
+          WHAT IS A SMART CONTRACT? <br>
+          A "smart contract" is simply a program that runs on the Ethereum blockchain. It's a collection of code (its
+          functions) and data (its state) that resides at a specific address on the Ethereum blockchain.
+
+          Smart contracts are a type of Ethereum account. This means they have a balance and they can send transactions
+          over the network. However they're not controlled by a user, instead they are deployed to the network and run
+          as
+          programmed. User accounts can then interact with a smart contract by submitting transactions that execute a
+          function defined on the smart contract. Smart contracts can define rules, like a regular contract, and
+          automatically enforce them via the code. Smart contracts can not be deleted by default, and interactions with
+          them are irreversible. <br>
+          PERMISSIONLESS <br>
+          Anyone can write a smart contract and deploy it to the network. You just need to learn how to code in a smart
+          contract language, and have enough ETH to deploy your contract. Deploying a smart contract is technically a
+          transaction, so you need to pay your Gas in the same way that you need to pay gas for a simple ETH transfer.
+          Gas costs for contract deployment are far higher, however.
+        </p>
+        <ul> Ethereum has developer-friendly languages for writing smart contracts:
+
+          <li>Solidity</li>
+          <li>Vyper</li>
+          <li> Yul</li>
+          <li> Yul+</li>
+        </ul>
+        <h5>SOLIDITY</h5>
+        <p>
+        <pre>
+          Object-oriented, high-level language for implementing smart contracts.
+          Curly-bracket language that has been most profoundly influenced by C++.
+          Statically typed (the type of a variable is known at compile time).
+          Supports:
+          Inheritance (you can extend other contracts).
+          Libraries (you can create reusable code that you can call from different contracts – like static functions in
+          a
+          static class in other object oriented programming languages).
+          Complex user-defined types.
+        </pre>
+        </p>
+        <p>
+          A DIGITAL VENDING MACHINE
+          Perhaps the best metaphor for a smart contract is a vending machine, as described by Nick Szabo. With the
+          right
+          inputs, a certain output is guaranteed.
+
+          To get a snack from a vending machine:
+
+          money + snack selection = snack dispensed
+
+          This logic is programmed into the vending machine.
+
+          A smart contract, like a vending machine, has logic programmed into it. Here's a simple example of how this
+          vending machine might look like as a smart contract:
+        </p>
+        <p style="color: coral;">
+        <pre>
+          pragma solidity 0.8.7;
+
+          contract VendingMachine {
+
+            // Declare state variables of the contract
+            address public owner;
+            mapping (address => uint) public cupcakeBalances;
+
+            // When 'VendingMachine' contract is deployed:
+            // 1. set the deploying address as the owner of the contract
+            // 2. set the deployed smart contract's cupcake balance to 100
+            constructor() {
+            owner = msg.sender;
+            cupcakeBalances[address(this)] = 100;
+            }
+
+            // Allow the owner to increase the smart contract's cupcake balance
+            function refill(uint amount) public {
+            require(msg.sender == owner, "Only the owner can refill.");
+            cupcakeBalances[address(this)] += amount;
+            }
+
+            // Allow anyone to purchase cupcakes
+            function purchase(uint amount) public payable {
+            require(msg.value >= amount * 1 ether, "You must pay at least 1 ETH per cupcake");
+            require(cupcakeBalances[address(this)] >= amount, "Not enough cupcakes in stock to complete this purchase");
+            cupcakeBalances[address(this)] -= amount;
+            cupcakeBalances[msg.sender] += amount;
+            }
+          }
+        </pre>
+        </p>
+      </div>
       <h2 class="text-danger" id="Smart Contract deploymetn using Ganache">Smart Contract deploymetn using Ganache
       </h2>
       <h2 class="text-danger" id="DApp Archotecture">DApp Archotecture</h2>
