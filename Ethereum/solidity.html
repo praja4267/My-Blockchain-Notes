@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Solidity</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="../blockchain_basics.html">Blockchain Basics</a>
+        <a href="./ethereum-accounts.html">Ethereum</a>
+        <a class="active" href="./solidity.html">Contact</a>
+        <a href="./ganache.html">About</a>
+    </div>
+    <div class="container-fluid" id="news">
+        <h1>This is todays news</h1>
+    </div>
+    <div class="container-fluid" id="Modifiers">
+        <ol>
+            <li>
+                We have <span style="color: chocolate;"> visibility modifiers </span> that control when and where the
+                function can be called from: <br><span style="color: chocolate;"> private </span> means
+                it's only callable from other functions inside the contract; <br> <span style="color: chocolate;">
+                    internal</span> is like private but can also be called
+                by contracts that inherit from this one; <br> <span style="color: chocolate;"> external </span> can only
+                be called outside the contract; <br> finally
+                <span style="color: chocolate;"> public </span> can be called anywhere, both internally and externally.
+            </li>
+            <li>
+                We also have <span style="color: chocolate;"> state modifiers</span>, which tell us how the function
+                interacts with the BlockChain: <br><span style="color: chocolate;"> view </span>tells
+                us that
+                by running the function, no data will be saved/changed. <br><span style="color: chocolate;"> pure
+                </span>tells us that not only does the function
+                not save
+                any data to the blockchain, but it also doesn't read any data from the blockchain. Both of these don't
+                cost any
+                gas to call if they're called externally from outside the contract (but they do cost gas if called
+                internally by
+                another function).
+            </li>
+            <li>
+                Then we have <span style="color: chocolate;"> custom modifiers</span>, like <span
+                    style="color: chocolate;"> onlyOwner</span> and <span style="color: chocolate;"> aboveLevel</span>,
+                for
+                example. For
+                these we can define custom logic to determine how they affect a function.
+            </li>
+        </ol>
+        <br>
+        These modifiers can all be stacked together on a function definition as follows:
+
+        function test() external view onlyOwner anotherModifier { /* ... */ }
+        In this chapter, we're going to introduce one more function modifier: payable.
+        <br><br>
+        <b>The <span style="color: chocolate;"> payable </span> Modifier: </b>
+        payable functions are part of what makes Solidity and Ethereum so cool — they are a special type of function
+        that can receive Ether.
+        <br>
+        Let that sink in for a minute. When you call an API function on a normal web server, you can't send US dollars
+        along with your function call — nor can you send Bitcoin.
+        <br>
+        But in Ethereum, because both the money (Ether), the data (transaction payload), and the contract code itself
+        all live on Ethereum, it's possible for you to call a function and pay money to the contract at the same time.
+        <br>
+        This allows for some really interesting logic, like requiring a certain payment to the contract in order to
+        execute a function.
+        <br><br>
+        Let's look at an example
+        contract OnlineStore {
+        function buySomething() external payable {
+        // Check to make sure 0.001 ether was sent to the function call:
+        require(msg.value == 0.001 ether);
+        // If so, some logic to transfer the digital item to the caller of the function:
+        transferThing(msg.sender);
+        }
+        }
+        Here, msg.value is a way to see how much Ether was sent to the contract, and ether is a built-in unit.
+        <br><br>
+        What happens here is that someone would call the function from web3.js (from the DApp's JavaScript front-end) as
+        follows:
+        <br>
+        // Assuming `OnlineStore` points to your contract on Ethereum:
+        OnlineStore.buySomething({from: web3.eth.defaultAccount, value: web3.utils.toWei(0.001)})
+        Notice the value field, where the javascript function call specifies how much ether to send (0.001). If you
+        think of the transaction like an envelope, and the parameters you send to the function call are the contents of
+        the letter you put inside, then adding a value is like putting cash inside the envelope — the letter and the
+        money get delivered together to the recipient.
+    </div>
+</body>
+
+</html>
