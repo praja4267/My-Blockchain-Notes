@@ -13,13 +13,50 @@
 
 <body>
     <div class="topnav">
-        <a class="active" href="../blockchain_basics.html">Blockchain Basics</a>
+        <a href="../blockchain_basics.html">Blockchain Basics</a>
         <a href="./ethereum-accounts.html">Ethereum</a>
         <a href="./solidity.html">Contact</a>
-        <a href="./ganache.html">About</a>
+        <a class="active" href="./truffle.html">Truffle</a>
+        <a href="../interview_questions/ethereum_iinterview.html">InterviewQuestions</a>
     </div>
+    <h2 id="Truffle">Truffle</h2>
     <div class="container-fluid" id="contact">
-        <h1>contact Smartcontract</h1>
+        <b>Truffle </b>is a development environment, testing framework and asset pipeline for Ethereum, aiming to make
+        life as
+        an Ethereum developer easier. With Truffle, you get:
+
+        Built-in smart contract compilation, linking, deployment and binary management.
+        Automated contract testing with Mocha and Chai.
+        Configurable build pipeline with support for custom build processes.
+        Scriptable deployment & migrations framework.
+        Network management for deploying to many public & private networks.
+        Interactive console for direct contract communication.
+        Instant rebuilding of assets during development.
+        External script runner that executes scripts within a Truffle environment.
+        <pre>
+        Install
+        $ npm install -g truffle
+        </pre>
+        <b>Quick Usage</b>
+        For a default set of contracts and tests, run the following within an empty project directory:
+        <pre>
+        $ truffle init
+        </pre>
+        From there, you can run
+        <ul>
+            <li>truffle create: truffle create 'artifact_type' 'ArtifactName' </li>
+            <li>truffle compile : to compile your contracts</li>
+            <li>truffle debug : Interactively debug any transaction on the blockchain.</li>
+            <li>truffle migrate: to deploy your contracts to the network</li>
+            <li> truffle test: to run their associated unit tests </li>
+        </ul>
+
+        Truffle comes bundled with a local development blockchain server that launches automatically when you invoke the
+        commands above. If you'd like to configure a more advanced development environment we recommend you install the
+        blockchain server separately by running npm install -g ganache-cli at the command line.
+
+        ganache-cli: a command-line version of Truffle's blockchain server.
+        ganache: A GUI for the server that displays your transaction history and chain state.
     </div>
 </body>
 
